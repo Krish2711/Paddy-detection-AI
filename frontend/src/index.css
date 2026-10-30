@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0c120e] text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-black min-h-screen transition-colors duration-300;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(5, 150, 105, 0.06) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(6, 78, 59, 0.08) 0px, transparent 50%);
+  }
+
+  /* Light mode override if toggled */
+  html:not(.dark) body {
+    @apply bg-[#f7faf8] text-slate-900;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.06) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(5, 150, 105, 0.04) 0px, transparent 50%);
+  }
+}
+
+/* Glassmorphism 2.0 with Specular Highlight */
+.glass-panel {
+  background: rgba(18, 26, 21, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+html:not(.dark) .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Cyber Glow Badge */
+.cyber-glow {
+  box-shadow: 0 0 25px -3px rgba(16, 185, 129, 0.35);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-300 to-green-200;
+}
+
+html:not(.dark) .gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-800 via-emerald-700 to-green-600;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.6);
+}
